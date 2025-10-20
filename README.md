@@ -4,10 +4,10 @@ RadRAG: an advanced RAG developed for a capstone project, whose purpose is to an
 
 RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuja função é responder sobre perguntas de radioproteção com base nas normas da CNEN (Brasil). Foi realizado um benchmarking entre diferentes técnicas de chunking e do RadRAG com LLMs comerciais disponíveis gratuitamente.
 
-## Goal
+### Goal
 - RAG system focused on CNEN standards with semantic, hierarchical, hybrid, and ensemble (semantic_hierarchical) chunking strategies, semantic and hybrid search, reranking, and answer generation via a local LLM (Ollama).
 
-## Tools & Technologies
+### Tools & Technologies
 - Language/Runtime
   - Python
 - Vector store
@@ -28,7 +28,7 @@ RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuj
   - `rank-bm25` (optional) for lexical signal in hybrid search
   - Local LLM via Ollama (HTTP API)
 
-## Methodologies
+### Methodologies
 - Ingestion & Extraction
   - Extraction with PyMuPDF (page text; attempts structure via TOC).
   - Collected metadata: `title`, `author`, `subject`, `creator`, total pages.
@@ -57,7 +57,7 @@ RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuj
   - `get_collection_stats()`: total chunks, unique sources, distribution by strategy/level, average coherence, average chunk size, etc.
   - Logging configurable (level/format/file) via `config.yaml`.
 
-## Configuration (config.yaml)
+### Configuration (config.yaml)
 - `advanced_chunking`: strategy (`hierarchical`, `semantic`, `hybrid`, `semantic_hierarchical`), sizes/overlaps, thresholds, and splitters.
 - `chromadb`: persistence directory, collection name, distance function, and hybrid search weights (`semantic_weight`).
 - `llm`: Ollama model, `base_url`, temperature, and `max_tokens`.
@@ -66,7 +66,7 @@ RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuj
 - `reranker`: `enabled`, `model`, `device`, `batch_size`, `top_k_rerank`.
 - `performance` and `logging`.
 
-## High-Level Flow
+### High-Level Flow
 1) PDF → extraction (text/TOC) → sections + metadata
 2) Section → chunking (configured strategy) → chunks + embeddings
 3) Chunks → indexing in ChromaDB (persistence + rich metadata)
@@ -75,20 +75,20 @@ RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuj
 6) (Optional) Context enrichment with parent
 7) Answer generation via Ollama
 
-## Quick Start
+### Quick Start
 - Install: `pip install -r requirements.txt`
 - Run CLI: `python app.py`
 - Configuration file: `config.yaml`
 
-## Environment Requirements
+### Environment Requirements
 - CPU works; GPU (CUDA) optionally accelerates embeddings and reranking.
 - For spaCy PT: `python -m spacy download pt_core_news_sm` (if needed).
 - For full hybrid search: install `rank-bm25`.
 
-## Limitations & Notes
+### Limitations & Notes
 - `semantic_hierarchical` does not apply different weights across strategies during retrieval; both contribute equally.
 - If `CrossEncoder` is not available, the system proceeds without reranking.
 - OLLAMA must be running locally at the configured `base_url`.
 
-#### RadRAG em português 
+## RadRAG em português 
 
