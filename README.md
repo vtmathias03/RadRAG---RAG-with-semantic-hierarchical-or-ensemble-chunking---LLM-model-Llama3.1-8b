@@ -4,8 +4,6 @@ RadRAG: an advanced RAG developed for a capstone project, whose purpose is to an
 
 RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuja função é responder sobre perguntas de radioproteção com base nas normas da CNEN (Brasil). Foi realizado um benchmarking entre diferentes técnicas de chunking e do RadRAG com LLMs comerciais disponíveis gratuitamente.
 
- RadRAG (Tools, Technologies & Methodologies)
-
 ## Goal
 - RAG system focused on CNEN standards with semantic, hierarchical, hybrid, and ensemble (semantic_hierarchical) chunking strategies, semantic and hybrid search, reranking, and answer generation via a local LLM (Ollama).
 
@@ -91,4 +89,6 @@ RadRAG: RAG avançado, desenvolvido para um Trabalho de Conclusão de Curso, cuj
 - `semantic_hierarchical` does not apply different weights across strategies during retrieval; both contribute equally.
 - If `CrossEncoder` is not available, the system proceeds without reranking.
 - OLLAMA must be running locally at the configured `base_url`.
+
+#### RadRAG em português 
 
