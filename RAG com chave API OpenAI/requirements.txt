@@ -1,0 +1,19 @@
+﻿# Core
+numpy>=1.24
+python-dotenv>=1.0.1
+
+# App
+streamlit>=1.35.0
+
+# LangChain + OpenAI
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-openai>=0.1.7
+openai>=1.30.0
+tiktoken>=0.6.0
+
+# Vector store
+chromadb>=0.5.5
+
+# PDF loading
+pypdf>=4.2.0
